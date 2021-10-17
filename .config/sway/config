@@ -7,7 +7,7 @@ set $term alacritty
 set $menu wofi -d
 
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output eDP-1 resolution 2160x1440 position 2560,0 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
+output eDP-1 resolution 2160x1440 position 1760,0 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
 output HDMI-A-1 resolution 2560x1440 position 0,0 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
 
 input "1267:12512:ELAN962C:00_04F3:30E0_Touchpad" {
@@ -18,15 +18,17 @@ input "1267:12512:ELAN962C:00_04F3:30E0_Touchpad" {
 #xwayland force scale 1.5
 #exec xsettingsd
 
+exec_always "systemctl --user restart kanshi"
 
 exec swayidle -w timeout 300 'blurlock'
+#exec pulseaudio -D
 
 exec wl-paste -t text --watch clipman store
-exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
+exec wl-paste -p -t text --watch clipman store --max-item=30 -P --histpath="~/.local/share/clipman-primary.json"
 bindsym Shift+Alt+h exec clipman pick -t rofi
 
 
-bindsym Shift+Alt+a exec grim -g "$(slurp)" - | swappy -f -
+bindsym Shift+Alt+a exec grim -g "$(slurp)" - | imv -
 
 
 bindsym $mod+Return exec $term
@@ -53,6 +55,10 @@ bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-; notify-send 'brightness
 floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload
+
+
+for_window [app_id="imv"] floating enable, resize set 400px 300px
+
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -189,6 +195,7 @@ position top
 #    }
 }
 
+#exec_always 'systemctl --user restart pulseaudio'
 
 default_border pixel 2
 default_floating_border none

@@ -5,7 +5,7 @@ colors:
   primary:
     background: '0x122637'
     foreground: '0xffffff'
-
+    background_opaity: 0
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text: '0x122637'

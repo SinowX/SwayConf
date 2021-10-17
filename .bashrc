@@ -171,3 +171,5 @@ alias stop='systemctl stop'
 alias start='systemctl start'
 
 alias code='code --enable-features=UseOzonePlatform --ozone-platform=wayland'
+
+alias logout='kill `pgrep sway`'

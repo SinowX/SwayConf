@@ -3,6 +3,8 @@
 !.config/
 .config/*
 
+
+!.config/systemd/
 !.config/picom.conf
 !.config/sway/
 !.config/waybar/

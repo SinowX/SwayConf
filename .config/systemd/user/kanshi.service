@@ -1,0 +1,10 @@
+[Unit]
+Description=kanshi - dynamic output configuration
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/bin/kanshi
+
+[Install]
+WantedBy=default.target
