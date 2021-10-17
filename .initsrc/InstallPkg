@@ -1,0 +1,44 @@
+grub efibootmgr'
+archlinuxcn-keyring'
+archlinuxcn-keyring'
+mesa vulkan-intel xf86-video-intel'
+sddm'
+sway'
+xfce4-terminal'
+thunar'
+ttf-roboto noto-fonts ttf-dejavu'
+picom polkit-gnome ntfs-3g fuse gvfs xdg-utils mlocate man-db ranger'
+yay python-pdftotext alsa alsa-utils mousepad zathura zathura-pdf-mupdf zathura-djvu'
+wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei'
+noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts'
+openssh base-devel noto-fonts-emoji noto-fonts-emoji-blob tar zip unzip unrar xarchiver'
+dunst'
+waybar'
+git cmake make gdb'
+gwenview'
+arc-icon-theme'
+qogir-icon-theme'
+downgrade'
+brightnessctl'
+perl-file-mimeinfo'
+docker'
+virtualbox'
+qt6-wayland'
+google-chrome
+rofi-lbonn-wayland-git
+visual-studio-code-bin
+otf-font-awesome
+wdisplays
+clipman
+ttf-all-the-icons
+baidunetdisk-bin
+otf-apple-sf-pro
+nerd-fonts-complete
+feishu
+xorg-xwayland-hidpi-git
+swaylock-effects
+vim-plug
+slurp
+swappy
+grim
+alacritty
