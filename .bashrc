@@ -164,6 +164,8 @@ alias node='node --use_strict'
 
 alias aliyun='ssh sinow@sinow.top'
 alias huawei='ssh root@139.9.139.128'
+alias huawei2='ssh root@121.36.16.130'
+
 alias mancn='man --locale=zh_CN'
 
 alias status='systemctl status'
@@ -173,3 +175,6 @@ alias start='systemctl start'
 alias code='code --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
 alias logout='kill `pgrep sway`'
+
+# cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+alias term='alacritty & disown'

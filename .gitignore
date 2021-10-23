@@ -20,6 +20,9 @@
 
 !.config/rofi
 
+!.vim
+.vim/*
+!.vim/coc-settings.json
 
 !.initsrc/
 

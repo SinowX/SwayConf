@@ -4,22 +4,37 @@ set mouse=v
 syntax on
 set hlsearch
 set is hls
-set tabstop=4
+set tabstop=2
+"set paste
+set shiftwidth=2
+
+
+
+command Cmakeload AsyncRun -cwd=<root> cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'roxma/vim-paste-easy'
 
+Plug 'tpope/vim-commentary'
 
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 let g:Lf_ShortcutF = '<c-p>'
 let g:Lf_ShortcutB = '<m-n>'
 noremap <c-n> :LeaderfMru<cr>
-noremap <m-p> :LeaderfFunction!<cr>
+execute "set <m-p>=\ep"
+execute "set <m-n>=\en"
+execute "set <m-m>=\em"
+
+noremap <m-p> :LeaderfFunction<cr>
 noremap <m-n> :LeaderfBuffer<cr>
 noremap <m-m> :LeaderfTag<cr>
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
 
-let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
+let g:Lf_RootMarkers = ['.project', '.root', '.svn','.git', 'compile_commands.json']
+" let g:Lf_WildIgnore = {
+" 		\ 'dir':['/home/sinow']
+" 	  \ }
 let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_WindowHeight = 0.30
 let g:Lf_CacheDirectory = expand('~/.vim/cache')
@@ -38,8 +53,13 @@ let g:asyncrun_open = 8
 let g:asyncrun_bell = 1
 
 " 设置 F10 打开/关闭 Quickfix 窗口
-nnoremap <F10> :call asyncrun#quickfix_toggle(8)<cr>
+"nnoremap <F10> :call asyncrun#quickfix_toggle(8)<cr>
+nnoremap <F9> :cclose <cr>
+nnoremap <F10> :copen <cr>
+nnoremap <F11> :AsyncRun 
+nnoremap <F12> :AsyncRun -cwd=<root> 
 
+let g:asyncrun_rootmarks = ['.svn', '.git', '.root', 'compile_commands.json']
 
 
 
@@ -79,7 +99,7 @@ set encoding=utf-8
 set hidden
 set nobackup
 set nowritebackup
-set cmdheight=2
+set cmdheight=1
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300

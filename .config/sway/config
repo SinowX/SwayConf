@@ -1,3 +1,5 @@
+xwayland enable
+
 set $mod Mod4
 set $left h
 set $down j
@@ -7,7 +9,9 @@ set $term alacritty
 set $menu wofi -d
 
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output eDP-1 resolution 2160x1440 position 1760,0 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
+#output eDP-1 resolution 2160x1440 position 1760,0 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
+output eDP-1 resolution 2160x1440 position 266,960 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
+
 output HDMI-A-1 resolution 2560x1440 position 0,0 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
 
 input "1267:12512:ELAN962C:00_04F3:30E0_Touchpad" {
@@ -20,7 +24,7 @@ input "1267:12512:ELAN962C:00_04F3:30E0_Touchpad" {
 
 exec_always "systemctl --user restart kanshi"
 
-exec swayidle -w timeout 300 'blurlock'
+exec swayidle -w timeout 600 'blurlock'
 #exec pulseaudio -D
 
 exec wl-paste -t text --watch clipman store
@@ -37,7 +41,8 @@ bindsym $mod+d exec rofi -i -show drun -modi drun -show-icons
 bindsym $mod+Tab exec rofi -i -show run
 
 
-bindsym $mod+F2 exec google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland
+#bindsym $mod+F2 exec google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland
+bindsym $mod+F2 exec MOZ_ENABLE_WAYLAND=1 firefox
 bindsym $mod+F3 exec thunar    
 
 
