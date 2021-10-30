@@ -95,7 +95,8 @@
         "bat": "BAT2"
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
+				"interval": 3,
+        "format-wifi": "{essid} |  {bandwidthUpBits}  {bandwidthDownBits} ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",

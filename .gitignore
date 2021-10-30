@@ -16,7 +16,7 @@
 !.config/ranger/scope.sh
 !.config/swappy/
 !.config/alacritty/
-
+!.config/dunst/
 
 !.config/rofi
 

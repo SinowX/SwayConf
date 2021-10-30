@@ -8,11 +8,16 @@ set tabstop=2
 "set paste
 set shiftwidth=2
 
+set foldmethod=syntax
+set nofoldenable
+set foldlevel=1
 
 
 command Cmakeload AsyncRun -cwd=<root> cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 
 call plug#begin('~/.vim/plugged')
+
+" Plug 'pseewald/vim-anyfold'
 
 Plug 'roxma/vim-paste-easy'
 

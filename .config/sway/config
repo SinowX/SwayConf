@@ -17,6 +17,9 @@ output HDMI-A-1 resolution 2560x1440 position 0,0 scale 1.5 bg /home/sinow/.init
 input "1267:12512:ELAN962C:00_04F3:30E0_Touchpad" {
 	dwt enabled
 	tap enabled
+	drag enabled
+	accel_profile adaptive
+	scroll_factor 0.5
 }
 
 #xwayland force scale 1.5
@@ -63,6 +66,7 @@ bindsym $mod+Shift+c reload
 
 
 for_window [app_id="imv"] floating enable, resize set 400px 300px
+for_window [app_id="sogoupinyinService"] floating enable
 
 
     # Exit sway (logs you out of your Wayland session)
