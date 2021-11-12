@@ -35,7 +35,7 @@ colors() {
 
 # Change the window title of X terminals
 case ${TERM} in
-	xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
+	xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*|alacritty)
 		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"'
 		;;
 	screen*)
@@ -73,6 +73,7 @@ if ${use_color} ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
 		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+		# PS1="\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] \[$(echo -e "$title")\]"
 	fi
 
 	alias ls='ls --color=auto'
@@ -176,5 +177,6 @@ alias code='code --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
 alias logout='kill `pgrep sway`'
 
-# cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 '
 alias term='alacritty & disown'
+

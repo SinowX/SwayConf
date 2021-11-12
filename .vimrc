@@ -7,6 +7,7 @@ set is hls
 set tabstop=2
 "set paste
 set shiftwidth=2
+"set list
 
 set foldmethod=syntax
 set nofoldenable

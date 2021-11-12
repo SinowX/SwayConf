@@ -1,4 +1,5 @@
-xwayland enable
+#xwayland enable
+xwayland disable
 
 set $mod Mod4
 set $left h
@@ -10,9 +11,13 @@ set $menu wofi -d
 
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output eDP-1 resolution 2160x1440 position 1760,0 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
-output eDP-1 resolution 2160x1440 position 266,960 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
+#output eDP-1 resolution 2160x1440 position 266,960 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
+#output HDMI-A-1 resolution 2560x1440 position 0,0 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
 
-output HDMI-A-1 resolution 2560x1440 position 0,0 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
+output eDP-1 resolution 2160x1440 position 960,746 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
+output HDMI-A-1 resolution 2560x1440 position 0,0 scale 1.5 transform 270 bg /home/sinow/.initsrc/wallpaper/flower.png fill
+
+
 
 input "1267:12512:ELAN962C:00_04F3:30E0_Touchpad" {
 	dwt enabled
@@ -29,6 +34,7 @@ exec_always "systemctl --user restart kanshi"
 
 exec swayidle -w timeout 600 'blurlock'
 #exec pulseaudio -D
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store --max-item=30 -P --histpath="~/.local/share/clipman-primary.json"
@@ -36,6 +42,7 @@ bindsym Shift+Alt+h exec clipman pick -t rofi
 
 
 bindsym Shift+Alt+a exec grim -g "$(slurp)" - | imv -
+#bindsym Shift+Alt+a exec grim -g "$(slurp)" - | swappy -
 
 
 bindsym $mod+Return exec $term
@@ -67,7 +74,7 @@ bindsym $mod+Shift+c reload
 
 for_window [app_id="imv"] floating enable, resize set 400px 300px
 for_window [app_id="sogoupinyinService"] floating enable
-
+for_window [class="wemeetapp"] floating enable
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
