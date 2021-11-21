@@ -13,6 +13,11 @@ set foldmethod=syntax
 set nofoldenable
 set foldlevel=1
 
+" powerline
+set rtp+=/usr/share/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
+
 
 command Cmakeload AsyncRun -cwd=<root> cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 

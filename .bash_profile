@@ -7,6 +7,7 @@
 #export XMODIFIERS="@im=fcitx"
 
 export GTK_THEME=BlueSky-Dark
+# export GTK_THEME=WhiteSur-dark
 #export TERM=xterm-256color
 
 if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then

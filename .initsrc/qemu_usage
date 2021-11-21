@@ -1,0 +1,5 @@
+qemu-system-x86_64 -m 2G WinXP.img \-enable-kvm -usb -device usb-tablet -boot d -smp 2
+// -usb -device usb-tablet for curor usage
+// -cdrom $path_to_img
+
+qemu-system-x86_64 -m 2G WinXP.img -enable-kvm -usb -device usb-tablet -boot d -smp 2 -netdev user,id=n0 -device rtl8139,netdev=n0

@@ -1,5 +1,5 @@
-#xwayland enable
-xwayland disable
+xwayland enable
+# xwayland disable
 
 set $mod Mod4
 set $left h
@@ -16,7 +16,6 @@ set $menu wofi -d
 
 output eDP-1 resolution 2160x1440 position 960,746 scale 1.5 bg /home/sinow/.initsrc/wallpaper/flower.png fill
 output HDMI-A-1 resolution 2560x1440 position 0,0 scale 1.5 transform 270 bg /home/sinow/.initsrc/wallpaper/flower.png fill
-
 
 
 input "1267:12512:ELAN962C:00_04F3:30E0_Touchpad" {
@@ -41,8 +40,8 @@ exec wl-paste -p -t text --watch clipman store --max-item=30 -P --histpath="~/.l
 bindsym Shift+Alt+h exec clipman pick -t rofi
 
 
-bindsym Shift+Alt+a exec grim -g "$(slurp)" - | imv -
-#bindsym Shift+Alt+a exec grim -g "$(slurp)" - | swappy -
+# bindsym Shift+Alt+a exec grim -g "$(slurp)" - | imv -
+bindsym Shift+Alt+a exec grim -g "$(slurp)" - | swappy -f -
 
 
 bindsym $mod+Return exec $term
@@ -52,7 +51,7 @@ bindsym $mod+Tab exec rofi -i -show run
 
 
 #bindsym $mod+F2 exec google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland
-bindsym $mod+F2 exec MOZ_ENABLE_WAYLAND=1 firefox
+bindsym $mod+F2 exec GTK_THEME="" MOZ_ENABLE_WAYLAND=1 firefox
 bindsym $mod+F3 exec thunar    
 
 
@@ -153,7 +152,7 @@ for_window [class="wemeetapp"] floating enable
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    # bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -191,10 +190,14 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+
+
+
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
+workspace_auto_back_and_forth yes
 bar {
     
 swaybar_command waybar
