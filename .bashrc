@@ -165,7 +165,7 @@ alias node='node --use_strict'
 
 alias aliyun='ssh sinow@sinow.top'
 alias huawei='ssh root@139.9.139.128'
-alias huawei2='ssh root@121.36.16.130'
+alias huawei2='ssh root@121.36.4.135'
 
 alias mancn='man --locale=zh_CN'
 
