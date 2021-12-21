@@ -44,7 +44,7 @@ let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
 
 let g:Lf_RootMarkers = ['.project', '.root', '.svn','.git', 'compile_commands.json']
 let g:Lf_WildIgnore = {
-		\ 'dir':['.git','.ccls-cache'],
+		\ 'dir':['.git','.ccls-cache','CMakeFiles'],
 		\ 'file':[]
 	  \ }
 let g:Lf_WorkingDirectoryMode = 'Ac'

@@ -180,3 +180,6 @@ alias logout='kill `pgrep sway`'
 alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 '
 alias term='alacritty & disown'
 
+alias baidupcs='unset https_proxy && unset http_proxy && baidupcs'
+
+alias trans='trans -I en:zh-CN '

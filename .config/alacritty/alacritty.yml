@@ -34,7 +34,9 @@ scrolling:
 font:
   normal:
     family: DejaVu Sans Mono
-    style: Regular
+    # style: Regular
+    style: Bold
+
 
   bold:
     family: DejaVu Sans Mono
@@ -54,7 +56,8 @@ font:
 # font:
 #   normal:
 #     family: SF Mono
-#     style: Regular
+#     # style: Regular
+#     style: Bold
 
 #   bold:
 #     family: SF Mono
@@ -76,7 +79,8 @@ colors:
   # Default colors
   primary:
     background: '0x122637'
-    foreground: '0xffffff'
+    # foreground: '0xffffff'
+    foreground: '0xeeeeee'
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text: '0x122637'
@@ -91,6 +95,7 @@ colors:
     blue:    '0x1460d2'
     magenta: '0xff005d'
     cyan:    '0x00bbbb'
+    # white:   '0xbbbbbb'
     white:   '0xbbbbbb'
 
   # Bright colors
@@ -102,6 +107,7 @@ colors:
     blue:    '0x5555ff'
     magenta: '0xff55ff'
     cyan:    '0x6ae3f9'
+    # white:   '0xffffff'
     white:   '0xffffff'
 
 

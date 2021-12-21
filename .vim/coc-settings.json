@@ -25,7 +25,7 @@
 					"onSave":0
 				},
 				"index":{
-					"threads": 2,
+					"threads": 4,
 					"comments": 2,
 					"multiVersion":0,
 					"onChange":false,

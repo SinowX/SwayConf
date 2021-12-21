@@ -6,3 +6,5 @@
 [http]
 	proxy = http://localhost:7890
 	sslVerify = false
+[core]
+	editor = vim
