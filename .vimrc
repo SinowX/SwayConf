@@ -1,5 +1,5 @@
 set encoding=utf-8
-set nu
+" set nu
 set mouse=v
 syntax on
 set hlsearch

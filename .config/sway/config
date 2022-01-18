@@ -12,7 +12,8 @@ include "color.conf"
 #hide_edge_borders --i3
 
 
-xwayland disable
+# xwayland disable
+xwayland enable
 
 workspace_layout default 
 

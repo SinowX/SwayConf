@@ -154,8 +154,8 @@ alias env='env | sort'
 
 #export HISTSIZE=2000
 #export HISTFILESIZE=2000
-export HISTSIZE=1000
-export HISTFILESIZE=1000
+export HISTSIZE=-1
+export HISTFILESIZE=-1
 
 #alias go='https_proxy='https_proxy='https_proxy='https_proxy=127.0.0.1:7890 go'
 
@@ -166,6 +166,8 @@ alias node='node --use_strict'
 alias aliyun='ssh sinow@sinow.top'
 alias huawei='ssh root@139.9.139.128'
 alias huawei2='ssh root@121.36.4.135'
+alias huawei3='ssh root@124.70.95.41'
+alias jichuang='ssh -p 8000 root@sinow.top'
 
 alias mancn='man --locale=zh_CN'
 
@@ -182,4 +184,4 @@ alias term='alacritty & disown'
 
 alias baidupcs='unset https_proxy && unset http_proxy && baidupcs'
 
-alias trans='trans -I en:zh-CN '
+# alias trans='trans -I en:zh-CN '

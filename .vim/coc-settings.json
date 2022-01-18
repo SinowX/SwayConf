@@ -21,11 +21,11 @@
 				"compilationDatabaseDirectory": "",
 				"diagnostics":{
 					"onOpen":0,
-					"onChange":1000,
+					"onChange":1,
 					"onSave":0
 				},
 				"index":{
-					"threads": 4,
+					"threads": 2,
 					"comments": 2,
 					"multiVersion":0,
 					"onChange":false,
