@@ -8,7 +8,7 @@ key_bindings:
 window:
   decorations: full
 
-background_opacity: 1
+window.opacity: 1
 
 save_to_clipboard: true
 

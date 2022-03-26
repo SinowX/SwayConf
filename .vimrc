@@ -1,113 +1,128 @@
 set encoding=utf-8
-" set nu
+set nu
 set mouse=v
 syntax on
 set hlsearch
 set is hls
 set tabstop=2
-"set paste
 set shiftwidth=2
-"set list
-
+" set list
 set foldmethod=syntax
 set nofoldenable
 set foldlevel=1
 
+
+
 " powerline
-set rtp+=/usr/share/powerline/bindings/vim/
+set rtp+=/usr/local/lib/python3.8/dist-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
 
 
-command Cmakeload AsyncRun -cwd=<root> cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1
-
 call plug#begin('~/.vim/plugged')
 
-" Plug 'pseewald/vim-anyfold'
-
+" ###INSERT模式粘贴文本###
 Plug 'roxma/vim-paste-easy'
 
+" ###注释代码###
+" 快捷键 g+c+c
 Plug 'tpope/vim-commentary'
 
+" ###模糊查找文件###
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+" 选择当前项目的文件
 let g:Lf_ShortcutF = '<c-p>'
-let g:Lf_ShortcutB = '<m-n>'
+" 选择历史文件
 noremap <c-n> :LeaderfMru<cr>
+" 选择当前buffer的函数
 execute "set <m-p>=\ep"
-execute "set <m-n>=\en"
-execute "set <m-m>=\em"
-
 noremap <m-p> :LeaderfFunction<cr>
-noremap <m-n> :LeaderfBuffer<cr>
-noremap <m-m> :LeaderfTag<cr>
+" 不使用 separator
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
-
+" 定位项目root
 let g:Lf_RootMarkers = ['.project', '.root', '.svn','.git', 'compile_commands.json']
+" 模糊查找忽略文件、目录
 let g:Lf_WildIgnore = {
 		\ 'dir':['.git','.ccls-cache','CMakeFiles'],
 		\ 'file':[]
 	  \ }
+" 工作目录模式
 let g:Lf_WorkingDirectoryMode = 'Ac'
+" Leaderf 窗口大小占比
 let g:Lf_WindowHeight = 0.30
+" Leaderf Cache 目录
 let g:Lf_CacheDirectory = expand('~/.vim/cache')
+" 不使用相对路径，使用基于项目根目录的路径
 let g:Lf_ShowRelativePath = 0
+" 禁用 F1 显示帮助页面
 let g:Lf_HideHelp = 1
+" 主体使用 powerline
 let g:Lf_StlColorscheme = 'powerline'
-let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
-
+" ###异步执行###
 Plug 'skywind3000/asyncrun.vim'
 
-" 自动打开 quickfix window ，高度为 6
+" 自动打开 quickfix window ，高度为 8
 let g:asyncrun_open = 8
-
 " 任务结束时候响铃提醒
 let g:asyncrun_bell = 1
-
 " 设置 F10 打开/关闭 Quickfix 窗口
-"nnoremap <F10> :call asyncrun#quickfix_toggle(8)<cr>
-nnoremap <F9> :cclose <cr>
-nnoremap <F10> :copen <cr>
+nnoremap <F10> :call asyncrun#quickfix_toggle(8)<cr>
+" 该两行暂时用上一行快捷键代替
+" nnoremap <F9> :cclose <cr>
+" nnoremap <F10> :copen <cr>
+" 在当前目录执行shell命令
 nnoremap <F11> :AsyncRun 
+" 在项目根目录执行shell命令
 nnoremap <F12> :AsyncRun -cwd=<root> 
-
+" 定位项目root
 let g:asyncrun_rootmarks = ['.svn', '.git', '.root', 'compile_commands.json']
 
-
-
+" ###自动运行 ctags，辅助language server查找变量###
 Plug 'ludovicchabant/vim-gutentags'
-
 " gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
 let g:gutentags_project_root = ['.git']
-
 " 所生成的数据文件的名称
 let g:gutentags_ctags_tagfile = '.tags'
-
 " 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
 let s:vim_tags = expand('~/.cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
-
 " 配置 ctags 的参数
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-
 " 检测 ~/.cache/tags 不存在就新建
 if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
 endif
 
+" ###clang-format###
+Plug 'rhysd/vim-clang-format'
+" 选择风格
+let g:clang_format#code_style = 'google'
+" clang-format 配置，应该是基于风格
+" let g:clang_format#style_options = {
+"             \ "AccessModifierOffset" : -4,
+"             \ "AllowShortIfStatementsOnASingleLine" : "true",
+"             \ "AlwaysBreakTemplateDeclarations" : "true",
+"             \ "Standard" : "C++17"}
+" 自动检测 .clang-format 文件
+let g:clang_format#detect_style_file = 1
+" 检测文件类型
+let g:clang_format#auto_filetypes = ["c", "cc", "h", "proto"]
+" F7格式化代码
+nnoremap <F7> :ClangFormat<cr>
 
+
+
+" ###Coc.Nvim###
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-
-
-
 
 call plug#end()
 
 
 
-set encoding=utf-8
+" 以下是Coc.Nvim的配置
 set hidden
 set nobackup
 set nowritebackup
