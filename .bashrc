@@ -152,6 +152,15 @@ alias la='ls -a --color=always'
 alias lla='ls -alh --color=always'
 alias env='env | sort'
 
+# less colorize
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
 #export HISTSIZE=2000
 #export HISTFILESIZE=2000
 export HISTSIZE=-1
@@ -164,10 +173,7 @@ alias path='echo $PATH | tr ":" "\n" |sort'
 alias node='node --use_strict'
 
 alias aliyun='ssh sinow@sinow.top'
-alias huawei='ssh root@139.9.139.128'
 alias huawei2='ssh root@121.36.4.135'
-alias huawei3='ssh root@124.70.95.41'
-alias jichuang='ssh -p 8000 root@sinow.top'
 
 alias mancn='man --locale=zh_CN'
 
@@ -185,3 +191,4 @@ alias term='alacritty & disown'
 alias baidupcs='unset https_proxy && unset http_proxy && baidupcs'
 
 # alias trans='trans -I en:zh-CN '
+alias trans='trans en:zh-CN '

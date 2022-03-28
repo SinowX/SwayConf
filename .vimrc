@@ -66,11 +66,10 @@ Plug 'skywind3000/asyncrun.vim'
 let g:asyncrun_open = 8
 " 任务结束时候响铃提醒
 let g:asyncrun_bell = 1
-" 设置 F10 打开/关闭 Quickfix 窗口
-nnoremap <F10> :call asyncrun#quickfix_toggle(8)<cr>
-" 该两行暂时用上一行快捷键代替
-" nnoremap <F9> :cclose <cr>
-" nnoremap <F10> :copen <cr>
+" " 设置 F10 打开/关闭 Quickfix 窗口
+" nnoremap <F10> :call asyncrun#quickfix_toggle(8)<cr>
+nnoremap <F9> :cclose <cr>
+nnoremap <F10> :copen <cr>
 " 在当前目录执行shell命令
 nnoremap <F11> :AsyncRun 
 " 在项目根目录执行shell命令

@@ -10,10 +10,10 @@
 !.config/waybar/
 !.config/fontconfig/
 !.config/ranger/
-.config/ranger/*
-!.config/ranger/rc.conf
-!.config/ranger/rifle.conf
-!.config/ranger/scope.sh
+/* .config/ranger/* */
+/* !.config/ranger/rc.conf */
+/* !.config/ranger/rifle.conf */
+/* !.config/ranger/scope.sh */
 !.config/swappy/
 !.config/alacritty/
 !.config/dunst/
