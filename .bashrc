@@ -181,7 +181,6 @@ alias status='systemctl status'
 alias stop='systemctl stop'
 alias start='systemctl start'
 
-alias code='code --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
 alias logout='kill `pgrep sway`'
 
@@ -189,6 +188,8 @@ alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 '
 alias term='alacritty & disown'
 
 alias baidupcs='unset https_proxy && unset http_proxy && baidupcs'
+alias typora='typora --enable-features=UseOzonePlatform --ozone-platform=wayland'
+alias code='code --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
 # alias trans='trans -I en:zh-CN '
 alias trans='trans en:zh-CN '

@@ -13,7 +13,9 @@ include "color.conf"
 
 
 # xwayland disable
-xwayland enable
+#xwayland enable
+xwayland force scale 2
+exec xsettingsd
 
 workspace_layout default 
 

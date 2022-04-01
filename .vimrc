@@ -99,12 +99,6 @@ endif
 Plug 'rhysd/vim-clang-format'
 " 选择风格
 let g:clang_format#code_style = 'google'
-" clang-format 配置，应该是基于风格
-" let g:clang_format#style_options = {
-"             \ "AccessModifierOffset" : -4,
-"             \ "AllowShortIfStatementsOnASingleLine" : "true",
-"             \ "AlwaysBreakTemplateDeclarations" : "true",
-"             \ "Standard" : "C++17"}
 " 自动检测 .clang-format 文件
 let g:clang_format#detect_style_file = 1
 " 检测文件类型
@@ -112,6 +106,8 @@ let g:clang_format#auto_filetypes = ["c", "cc", "h", "proto"]
 " F7格式化代码
 nnoremap <F7> :ClangFormat<cr>
 
+
+Plug 'yuratomo/w3m.vim'
 
 
 " ###Coc.Nvim###

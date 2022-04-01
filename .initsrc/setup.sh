@@ -1,11 +1,11 @@
 #!/bin/bash
 yay_packages=(rofi-lbonn-wayland-git otf-font-awesome ttf-all-the-icons otf-apple-sf-pro nerd-fonts-complete)
 cmdline=(mlocate man-db man-pages bash-completion ranger openssh strace)
-develop=(git gcc gdb cmake make docker vim vim-plug powerline-vim nodejs ctags npm)
+develop=(git gcc gdb cmake make docker vim vim-plug powerline-vim nodejs ctags npm clion)
 compress=(tar zip unzip unrar xarchiver)
 docread=(mousepad zathura zathura-pdf-mupdf zathura-djvu python-pdftotext)
 picture=(gwenview slurp swappy grim)
-desktop=(sway dunst waybar wl-paste arc-icon-theme qogir-icon-theme wdisplays clipman swaylock-effects-git swayidle)
+desktop=(sway-hidpi-git dunst waybar wl-paste arc-icon-theme qogir-icon-theme wdisplays clipman swaylock-effects-git swayidle xsettingsd)
 filesystem=(thunar ntfs-3g fuse gvfs)
 video_relate=(mesa vulkan-intel xf86-video-intel picom brightnessctl kanshi pavucontrol)
 sound_relase=(alsa alsa-utils pavucontrol pulseaudio)
