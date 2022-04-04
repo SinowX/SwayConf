@@ -17,8 +17,8 @@ if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
 fi
 
 
-# export http_proxy=http://localhost:7890
-# export https_proxy=http://localhost:7890
+export http_proxy=http://localhost:7890
+export https_proxy=http://localhost:7890
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 

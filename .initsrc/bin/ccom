@@ -89,5 +89,5 @@ then
 	exit -1
 elif [ $Run -eq 1 ]
 then
-	./$Output
+	./$Output && rm ./$Output
 fi
