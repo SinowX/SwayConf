@@ -193,3 +193,5 @@ alias code='code --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
 # alias trans='trans -I en:zh-CN '
 alias trans='trans en:zh-CN '
+
+alias mpiexec='mpiexec --mca opal_warn_on_missing_libcuda 0'

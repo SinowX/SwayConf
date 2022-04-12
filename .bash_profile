@@ -19,6 +19,8 @@ fi
 
 export http_proxy=http://localhost:7890
 export https_proxy=http://localhost:7890
+export QT_SCALE_FACTOR=2
+export _JAVA_AWT_WM_NONREPARENTING=1
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 

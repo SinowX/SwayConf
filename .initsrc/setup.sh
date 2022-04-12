@@ -1,7 +1,7 @@
 #!/bin/bash
 yay_packages=(rofi-lbonn-wayland-git otf-font-awesome ttf-all-the-icons otf-apple-sf-pro nerd-fonts-complete swaylock-effects-git microsoft-edge-stable-bin)
-cmdline=(mlocate man-db man-pages bash-completion ranger openssh strace w3m)
-develop=(git gcc gdb cmake make docker vim vim-plug powerline-vim nodejs ctags npm clion typora)
+cmdline=(mlocate man-db man-pages bash-completion ranger openssh strace w3m tmux)
+develop=(git gcc gdb cmake make docker vim vim-plug powerline-vim nodejs ctags npm clion typora ccls python-pip)
 compress=(tar zip unzip unrar xarchiver)
 docread=(mousepad zathura zathura-pdf-mupdf zathura-djvu python-pdftotext)
 picture=(gwenview slurp swappy grim)
